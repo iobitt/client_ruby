@@ -1,14 +1,14 @@
 # encoding: UTF-8
 
-require 'prometheus/client/data_stores/synchronized'
+require 'prometheus/client/data_stores/redis'
 
 module Prometheus
   module Client
     class Config
       attr_accessor :data_store
 
-      def initialize
-        @data_store = Prometheus::Client::DataStores::Synchronized.new
+      def initialize(data_store = nil)
+        @data_store = data_store || Prometheus::Client::DataStores::Redis.new
       end
     end
   end

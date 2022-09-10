@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.files             = %w(README.md LICENSE) + Dir.glob('{lib/**/*}')
   s.require_paths     = ['lib']
 
+  s.add_runtime_dependency 'redis'
   s.add_development_dependency 'benchmark-ips'
   s.add_development_dependency 'concurrent-ruby'
 end

@@ -11,8 +11,8 @@ module Prometheus
       @registry ||= Registry.new
     end
 
-    def self.config
-      @config ||= Config.new
+    def self.config(data_store: nil)
+      @config ||= Config.new(data_store)
     end
   end
 end
